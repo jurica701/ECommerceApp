@@ -1,0 +1,29 @@
+﻿@model ECommerceApp.Models.CreditCardModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@using (Html.BeginForm("SubmitAction", "Home", FormMethod.Post))
+{
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+    <h2>Please enter your credit card information below</h2>
+    <p>
+        <div>
+            <label>Credit card number:</label>
+                @Html.TextBoxFor(m => m.creditCardNumber, new { @type = "number"})
+            </div>
+            <div>
+                <label>Credit card expiry date:</label>
+                @Html.TextBoxFor(m => m.expiryDate, new { @type = "month"})
+            </div>
+            <div>
+                <label>CCV:</label>
+                @Html.TextBoxFor(m => m.cvv, new { @type = "number"})
+            </div>
+            <div>
+                <input type="submit" value="Pay now" class="btn btn-primary" />
+            </div>
+    </p>
+</div>
+}
